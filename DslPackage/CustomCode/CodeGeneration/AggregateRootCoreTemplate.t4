@@ -1,0 +1,244 @@
+﻿<#@ assembly name="FourDeep.PDizzle.DslPackage.dll" #>
+<#@ assembly name="System.Data" #>
+<#@ assembly name="System.Core" #>
+<#@ assembly name="System.Data.Linq" #>
+<#@ import namespace="System.Linq" #>
+<#@ import namespace="System.Data" #>
+<#@ import namespace="System.Data.Linq" #>
+<#@ import namespace="FourDeep.PDizzle.TextTransformation" #>
+<#@ template inherits="EventSourcingModelTextTransformation" #> 
+<#@ output extension=".generated.cs" #>
+<#@ PDizzle processor="PDizzleDirectiveProcessor" requires="fileName='MyAggregateName.pdizzle'" #>
+
+#region (c) 2015 4Deep Technologies LLC
+
+// Copyright (c) 4Deep Technologies LLC 2015 (http://www.4deeptech.com)
+// Created by Darren Ford
+
+//Generated using PDizzle DSL Model and Code Generator
+//see http://www.4deeptech.com/blog/post/2012/02/16/Creating-a-DSL-for-DDD-and-Event-Sourcing-Code-Generation.aspx
+#endregion
+ 
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Reflection;
+using System.Runtime.Serialization;
+using Dizzle.Cqrs.Portable;
+using <#= this.AggregateModel.ModelNamespace #>.Events;
+using <#= this.AggregateModel.ModelNamespace #>.Commands;
+using <#= this.AggregateModel.ModelNamespace #>.Model; 
+
+namespace <#= this.AggregateModel.ModelNamespace #>.Model
+{
+	/// <summary>
+	/// <#=GetAggregateRootDescription(this.AggregateModel)#>
+	/// </summary> 
+	public partial class <#= this.AggregateModel.AggregateRoot.Name #> : Aggregate,<#=GetCommandInterfaceExtenders(this.AggregateModel)#>,<#=GetEventInterfaceExtenders(this.AggregateModel)#>
+	{
+<#
+foreach (Property property in this.AggregateModel.AggregateRoot.Properties.ToArray().AsQueryable().OrderBy(tmp=>tmp.Order))
+{
+#>
+		/// <summary>
+		/// <#= property.Description #>
+		/// </summary>
+		[DataMember(Order = <#= property.Order #>)]
+        public <#= property.Type #> <#= property.Name #> { get; internal set; }
+
+<#    
+}
+#>
+
+		public <#=GetAggregateRootName(this.AggregateModel)#>()
+        {
+            _state = state;
+			_context = context;
+        }
+
+	}//end aggregateroot
+
+	#region entities
+<#
+foreach (Entity ent in this.AggregateModel.Entities) 
+{
+#>
+	[DataContract]
+	public partial class <#=ent.Name #>
+	{
+<#
+foreach (Property property in ent.Properties.ToArray().AsQueryable().OrderBy(tmp=>tmp.Order))
+{
+#>
+		/// <summary>
+		/// <#= property.Description #> 
+		/// </summary>
+		[DataMember(Order = <#= property.Order #>)]
+        public <#= property.Type #> <#= property.Name #> { get; set; }
+
+<#    
+}
+#>		
+		public <#=ent.Name #>()
+		{
+		}
+
+		public <#=ent.Name #>(<#BuildProperties(ent.Properties);#>) 
+		{
+			<#BuildConstructorProperties(ent.Properties);#>
+		}
+
+	}
+<#    
+}
+#>
+	#endregion
+}	
+
+namespace <#= this.AggregateModel.ModelNamespace #>.Commands 
+{
+<#
+foreach (DomainCommand element in this.AggregateModel.AggregateRoot.DomainCommands)
+{
+#>
+	/// <summary>
+	/// <#= element.Description #>
+	/// </summary>
+	[DataContract(Namespace = "<#= this.AggregateModel.ModelNamespace #>")]
+<#
+if(!string.IsNullOrEmpty(element.RequiredPrivilege))
+{
+#>
+	[RequiresPrivilege("<#= element.RequiredPrivilege #>")]
+<#
+}
+#>
+    public partial class <#= element.Name #>
+    {
+
+<#
+foreach (Property property in element.Properties)
+{
+#>
+		/// <summary>
+		/// <#= property.Description #>
+		/// </summary>
+		[DataMember(Order = <#= property.Order #>)] 
+        public <#= property.Type #> <#= property.Name #> { get; private set; }
+
+<#    
+}
+#>
+		public <#= element.Name #>() 
+        {
+            
+        }
+
+        public <#= element.Name #>(<#BuildProperties(element.Properties);#>)
+        {
+            <#BuildConstructorProperties(element.Properties);#>
+        }
+
+        public override string ToString()
+        {
+            return <#= BuildPropertiesToString(element.Properties)#>;
+        }
+    }//end <#= element.Name #> class
+
+
+<#    
+	} 
+#>
+}//end namespace
+
+namespace <#= this.AggregateModel.ModelNamespace #>.Events
+{
+<#
+foreach (DomainEvent element in this.AggregateModel.AggregateRoot.DomainEvents)
+{
+#>
+	/// <summary>
+	/// <#= element.Description #>
+	/// </summary>
+	[DataContract(Namespace = "<#= this.AggregateModel.ModelNamespace #>")]
+    public partial class <#= element.Name #> : IEvent
+    {
+
+<#
+foreach (Property property in element.Properties)
+{
+#>
+		/// <summary>
+		/// <#= property.Description #>
+		/// </summary>
+		[DataMember(Order = <#= property.Order #>)] 
+        public <#= property.Type #> <#= property.Name #> { get; private set; }
+
+<#    
+}
+#>
+		public <#= element.Name #>() 
+        {
+            
+        }
+
+        public <#= element.Name #>(<#BuildProperties(element.Properties);#>)
+        {
+            <#BuildConstructorProperties(element.Properties);#>
+        }
+
+        public override string ToString()
+        {
+            return <#= BuildPropertiesToString(element.Properties)#>;
+        }
+    }//end <#= element.Name #> class
+
+
+<#    
+	} 
+#>
+}//end namespace
+
+namespace <#= this.AggregateModel.ModelNamespace #>.Views 
+{
+<#
+foreach (View element in this.AggregateModel.Views)
+{
+#>
+	/// <summary>
+	/// <#= element.Description #>
+	/// </summary>
+    public partial class <#= element.Name #>
+    {
+
+<#
+foreach (Property property in element.Properties)
+{
+#>
+		/// <summary>
+		/// <#= property.Description #>
+		/// </summary>
+		[DataMember(Order = <#= property.Order #>)] 
+        public <#= property.Type #> <#= property.Name #> { get; set; }
+
+<#    
+}
+#>
+		public <#= element.Name #>() 
+        {
+            
+        }
+
+        public <#= element.Name #>(<#BuildProperties(element.Properties);#>)
+        {
+            <#BuildConstructorProperties(element.Properties);#>
+        }
+        
+    }//end <#= element.Name #> class
+
+
+<#    
+	} 
+#>
+}//end namespace
