@@ -1,0 +1,74 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<aggregateModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" dslVersion="1.0.0.0" Id="51fb937a-5286-456d-b61d-e47a633ead3e" xmlns="http://schemas.microsoft.com/dsltools/PDizzle">
+  <aggregateRoot>
+    <aggregateRoot Id="eee4a2a6-e884-41cc-ad76-7032742ea6d1" name="Player" description="The player">
+      <properties>
+        <aggregateRootHasProperties Id="d683d8f5-5369-4492-9fe4-94c660c5eeca">
+          <property Id="965468e7-2160-414a-8019-54a0dcb8ccbd" order="1" name="Id" type="PlayerId" description="The id" />
+        </aggregateRootHasProperties>
+      </properties>
+      <domainCommands>
+        <aggregateRootReferencesDomainCommands Id="1865febf-0231-453d-bb1f-4ad75cb7db52">
+          <domainCommandMoniker name="/51fb937a-5286-456d-b61d-e47a633ead3e/CreatePlayer" />
+        </aggregateRootReferencesDomainCommands>
+      </domainCommands>
+      <domainEvents>
+        <aggregateRootReferencesDomainEvents Id="3056148a-b7af-4715-b453-cca4669f7a73">
+          <domainEventMoniker Id="97bcf829-e961-4963-88da-19f8143d2510" />
+        </aggregateRootReferencesDomainEvents>
+      </domainEvents>
+    </aggregateRoot>
+  </aggregateRoot>
+  <domainCommands>
+    <aggregateModelHasDomainCommands Id="3af370bd-26aa-4246-8c36-03a323ad70bb">
+      <domainCommand Id="b8c680fe-bd4f-44cf-a8b3-aee984644129" name="CreatePlayer" description="create player">
+        <properties>
+          <domainCommandHasProperties Id="30944b2f-385a-4008-99d0-734d8117f04c">
+            <property Id="23da90a8-aa35-4146-ac66-833bb616e5e1" order="1" name="Id" type="PlayerId" description="The id" />
+          </domainCommandHasProperties>
+        </properties>
+      </domainCommand>
+    </aggregateModelHasDomainCommands>
+  </domainCommands>
+  <views>
+    <aggregateModelHasViews Id="ededa6f4-b441-43e7-a850-ff2248004891">
+      <view Id="8221cfb8-428a-4789-bc2e-c3c3caa184ef" name="PlayerView" description="The player view">
+        <properties>
+          <viewHasProperties Id="2c866e4c-8040-4e9b-a25a-c6077be71540">
+            <property Id="046c387a-7820-43f3-815f-f252f24d4498" order="1" name="Id" type="PlayerId" description="The id" />
+          </viewHasProperties>
+        </properties>
+        <domainEvents>
+          <viewHandlesDomainEvents Id="5fa9d6be-3f31-407a-a670-035380584400">
+            <domainEvent Id="96a14e56-55a7-47d1-925e-e58dd25819dc" name="PlayerCreated" />
+          </viewHandlesDomainEvents>
+          <viewHandlesDomainEvents Id="f7a3d9ea-f568-4430-b27b-8e1084603949">
+            <domainEvent Id="291fd833-7cc5-4a9b-9a38-81922814d339" name="PlayerUpdated" />
+          </viewHandlesDomainEvents>
+        </domainEvents>
+      </view>
+    </aggregateModelHasViews>
+  </views>
+  <domainEvented>
+    <aggregateModelHandlesDomainEvents Id="14c70a52-a124-45af-a49d-d5fde237d40b">
+      <domainEvent Id="97bcf829-e961-4963-88da-19f8143d2510" name="PlayerCreated" description="player was created">
+        <properties>
+          <domainEventHasProperties Id="6d46f5da-5ef8-4bed-9861-70764b066436">
+            <property Id="3ffd3ea0-503f-41e9-bd3f-f0132ed2f08b" order="1" name="Id" type="PlayerId" description="The id" />
+          </domainEventHasProperties>
+        </properties>
+      </domainEvent>
+    </aggregateModelHandlesDomainEvents>
+  </domainEvented>
+  <entities>
+    <aggregateModelHasEntities Id="7647d3c9-0b75-40af-936c-24a9ba50a2ba">
+      <entity Id="76d9a341-368c-44d7-b0c1-09c9052162c8" name="Address">
+        <properties>
+          <entityHasProperties Id="9123153e-5d89-4875-a0eb-347cde922fa0">
+            <property Id="0fdb5adf-b43d-4de2-9f75-72f1d6837c66" order="1" name="AddressLine1" type="String" description="Street 1" />
+          </entityHasProperties>
+        </properties>
+      </entity>
+    </aggregateModelHasEntities>
+  </entities>
+</aggregateModel>
