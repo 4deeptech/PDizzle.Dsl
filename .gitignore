@@ -1,5 +1,5 @@
 # ignore generated files
-Dsl/GeneratedCode/*
+Dsl/GeneratedCode/*.cs
 DslPackage/GeneratedCode/*.cs
 
 
