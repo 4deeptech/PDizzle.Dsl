@@ -26,9 +26,9 @@ namespace Cqrs.Model
 	/// The player
 	/// </summary> 
 	public partial class Player : Aggregate,
-	IHandleCommand<CreatePlayer>
+		IHandleCommand<CreatePlayer>
 ,
-	IApplyEvent<PlayerCreated>
+		IApplyEvent<PlayerCreated>
 
 	{
 		/// <summary>

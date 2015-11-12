@@ -21,7 +21,7 @@
         <elementListCompartment Id="e9380da7-1de3-416a-af01-6b1cc1314aca" absoluteBounds="3.39, 3.01, 1.4700000000000002, 0.44169108072916663" name="Properties" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </domainCommandShape>
-    <commandConnector Id="29505415-565c-4fd9-9629-a93f21bd221d" edgePoints="[(5.875 : 1.27584554036458); (4.125 : 1.27584554036458); (4.125 : 2.5)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <commandConnector Id="29505415-565c-4fd9-9629-a93f21bd221d" edgePoints="[(5.875 : 1.27584554036458); (4.125 : 1.27584554036458); (4.125 : 2.5)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <aggregateRootReferencesDomainCommandsMoniker Id="1865febf-0231-453d-bb1f-4ad75cb7db52" />
       <nodes>
         <aggregateRootShapeMoniker Id="21e91ed2-5b26-430c-90f1-9770d3370491" />
@@ -34,7 +34,7 @@
         <elementListCompartment Id="70130bc4-c6f8-4e74-97f8-ed6a09d5f516" absoluteBounds="8.265, 3.135, 1.4700000000000002, 0.44169108072916663" name="Properties" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </domainEventShape>
-    <domainEventConnector Id="ba000572-96f2-4702-9f5f-57f08b5f2bf0" edgePoints="[(7.375 : 1.27584554036458); (9 : 1.27584554036458); (9 : 2.625)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <domainEventConnector Id="ba000572-96f2-4702-9f5f-57f08b5f2bf0" edgePoints="[(7.375 : 1.27584554036458); (9 : 1.27584554036458); (9 : 2.625)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <aggregateRootReferencesDomainEventsMoniker Id="3056148a-b7af-4715-b453-cca4669f7a73" />
       <nodes>
         <aggregateRootShapeMoniker Id="21e91ed2-5b26-430c-90f1-9770d3370491" />

@@ -53,11 +53,40 @@ foreach (Property property in this.AggregateModel.AggregateRoot.Properties.ToArr
 
 		public <#=GetAggregateRootName(this.AggregateModel)#>()
         {
-            _state = state;
-			_context = context;
+
         }
 
 	}//end aggregateroot
+
+	#region Aggregate Id
+
+	[DataContract(Namespace = "<#= this.AggregateModel.ModelNamespace #>")]
+    public sealed class <#= this.AggregateModel.AggregateRoot.Name #>Id : AbstractIdentity<Guid>
+    {
+        public const string TagValue = "player";
+
+        public <#= this.AggregateModel.AggregateRoot.Name #>Id()
+        {
+        }
+
+        public <#= this.AggregateModel.AggregateRoot.Name #>Id(Guid id)
+        {
+            Id = id;
+        }
+
+        public override string GetTag()
+        {
+            return TagValue;
+        }
+
+
+        [DataMember(Order = 1)]
+        public override Guid Id { get; protected set; }
+
+
+    }
+
+	#endregion
 
 	#region entities
 <#
@@ -236,7 +265,6 @@ foreach (Property property in element.Properties)
         }
         
     }//end <#= element.Name #> class
-
 
 <#    
 	} 
