@@ -5,6 +5,10 @@ The T4 Template wired in generates code to be used for this sample app:
 
 * Dizzle.CQRS.Basic: https://github.com/4deeptech/Dizzle.Cqrs.Basic 
 
+Sample screenshot
+
+![Sample screenshot](https://raw.githubusercontent.com/4deeptech/Dizzle.Cqrs.Basic/master/TestDomain/player_screenshot.png) 
+
 Look for the AggregateRootCoreTemplate.t4 file under
 
 DslPackage\CustomCode\CodeGeneration\AggregateRootCoreTemplate.t4
