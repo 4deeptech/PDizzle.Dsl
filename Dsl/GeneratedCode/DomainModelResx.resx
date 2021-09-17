@@ -462,7 +462,7 @@
     <comment>DisplayName for DomainRole &apos;AggregateModel&apos; on DomainRelationship &apos;AggregateModelHandlesDomainEvents&apos;</comment>
   </data>
   <data name="FourDeep.PDizzle.AggregateModelHandlesDomainEvents/AggregateModel.PropertyDisplayName" xml:space="preserve">
-    <value>Domain Evented</value>
+    <value>Domain Events</value>
     <comment>PropertyDisplayName for DomainRole &apos;AggregateModel&apos; on DomainRelationship &apos;AggregateModelHandlesDomainEvents&apos;</comment>
   </data>
   <data name="FourDeep.PDizzle.AggregateModelHandlesDomainEvents/DomainEvent.Description" xml:space="preserve">

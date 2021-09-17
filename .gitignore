@@ -186,3 +186,5 @@ UpgradeLog*.htm
 
 # Microsoft Fakes
 FakesAssemblies/
+.vs/PDizzle.Dsl/v16/TestStore/0/testlog.manifest
+.vs/PDizzle.Dsl/v16/TestStore/0/000.testlog

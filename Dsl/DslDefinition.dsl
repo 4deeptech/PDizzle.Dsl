@@ -298,7 +298,7 @@
     </DomainRelationship>
     <DomainRelationship Id="be3aad73-66eb-43ed-8ffa-3ef69caef54f" Description="Description for FourDeep.PDizzle.AggregateModelHandlesDomainEvents" Name="AggregateModelHandlesDomainEvents" DisplayName="Aggregate Model Handles Domain Events" Namespace="FourDeep.PDizzle" IsEmbedding="true">
       <Source>
-        <DomainRole Id="9c2c53c2-be14-4d6c-953d-14c7b87b71bf" Description="Description for FourDeep.PDizzle.AggregateModelHandlesDomainEvents.AggregateModel" Name="AggregateModel" DisplayName="Aggregate Model" PropertyName="DomainEvented" PropagatesCopy="PropagatesCopyToLinkAndOppositeRolePlayer" PropertyDisplayName="Domain Evented">
+        <DomainRole Id="9c2c53c2-be14-4d6c-953d-14c7b87b71bf" Description="Description for FourDeep.PDizzle.AggregateModelHandlesDomainEvents.AggregateModel" Name="AggregateModel" DisplayName="Aggregate Model" PropertyName="DomainEvented" PropagatesCopy="PropagatesCopyToLinkAndOppositeRolePlayer" PropertyDisplayName="Domain Events">
           <RolePlayer>
             <DomainClassMoniker Name="AggregateModel" />
           </RolePlayer>
@@ -494,7 +494,7 @@
         <TextDecorator Name="DescriptionDecorator" DisplayName="Description Decorator" DefaultText="DescriptionDecorator" />
       </ShapeHasDecorators>
     </GeometryShape>
-    <CompartmentShape Id="190e49cc-2607-4fb3-998e-4fd765067f7b" Description="Description for FourDeep.PDizzle.DomainCommandShape" Name="DomainCommandShape" DisplayName="Domain Command Shape" Namespace="FourDeep.PDizzle" GeneratesDoubleDerived="true" FixedTooltipText="Domain Command Shape" ExposesTextColor="true" FillColor="DarkKhaki" InitialHeight="0.5" ExposesFillColorAsProperty="true" ExposesFillGradientMode="true" Geometry="Rectangle">
+    <CompartmentShape Id="190e49cc-2607-4fb3-998e-4fd765067f7b" Description="Description for FourDeep.PDizzle.DomainCommandShape" Name="DomainCommandShape" DisplayName="Domain Command Shape" Namespace="FourDeep.PDizzle" GeneratesDoubleDerived="true" FixedTooltipText="Domain Command Shape" ExposesTextColor="true" FillColor="SkyBlue" InitialHeight="0.5" ExposesFillColorAsProperty="true" ExposesFillGradientMode="true" Geometry="Rectangle">
       <Properties>
         <DomainProperty Id="820628c8-e12d-4fb3-9aee-4cbff1e2df08" Description="Description for FourDeep.PDizzle.DomainCommandShape.Fill Color" Name="FillColor" DisplayName="Fill Color" Kind="CustomStorage">
           <Type>
@@ -523,7 +523,7 @@
       </ShapeHasDecorators>
       <Compartment Name="Properties" Title="Properties" />
     </CompartmentShape>
-    <CompartmentShape Id="f6162fdd-1e99-42b9-9090-1f4d5af3a2ac" Description="Description for FourDeep.PDizzle.DomainEventShape" Name="DomainEventShape" DisplayName="Domain Event Shape" Namespace="FourDeep.PDizzle" GeneratesDoubleDerived="true" FixedTooltipText="Domain Event Shape" ExposesTextColor="true" FillColor="SteelBlue" InitialHeight="0.5" ExposesFillColorAsProperty="true" ExposesFillGradientMode="true" Geometry="Rectangle">
+    <CompartmentShape Id="f6162fdd-1e99-42b9-9090-1f4d5af3a2ac" Description="Description for FourDeep.PDizzle.DomainEventShape" Name="DomainEventShape" DisplayName="Domain Event Shape" Namespace="FourDeep.PDizzle" GeneratesDoubleDerived="true" FixedTooltipText="Domain Event Shape" ExposesTextColor="true" FillColor="Orange" InitialHeight="0.5" ExposesFillColorAsProperty="true" ExposesFillGradientMode="true" Geometry="Rectangle">
       <Properties>
         <DomainProperty Id="2b7d9d14-0966-4847-97bd-7bc3b5f022a8" Description="Description for FourDeep.PDizzle.DomainEventShape.Fill Color" Name="FillColor" DisplayName="Fill Color" Kind="CustomStorage">
           <Type>
@@ -578,7 +578,7 @@
       </ShapeHasDecorators>
       <Compartment Name="Properties" Title="Properties" />
     </CompartmentShape>
-    <CompartmentShape Id="d63e8334-b13f-4b2a-87b1-847b42c6d145" Description="Description for FourDeep.PDizzle.ViewShape" Name="ViewShape" DisplayName="View Shape" Namespace="FourDeep.PDizzle" GeneratesDoubleDerived="true" FixedTooltipText="View Shape" ExposesTextColor="true" FillColor="Orange" InitialHeight="0.5" ExposesFillColorAsProperty="true" ExposesFillGradientMode="true" Geometry="RoundedRectangle">
+    <CompartmentShape Id="d63e8334-b13f-4b2a-87b1-847b42c6d145" Description="Description for FourDeep.PDizzle.ViewShape" Name="ViewShape" DisplayName="View Shape" Namespace="FourDeep.PDizzle" GeneratesDoubleDerived="true" FixedTooltipText="View Shape" ExposesTextColor="true" FillColor="YellowGreen" InitialHeight="0.5" ExposesFillColorAsProperty="true" ExposesFillGradientMode="true" Geometry="RoundedRectangle">
       <Properties>
         <DomainProperty Id="0e13d365-28cf-4b38-bd3d-7ddb0e291bbc" Description="Description for FourDeep.PDizzle.ViewShape.Fill Color" Name="FillColor" DisplayName="Fill Color" Kind="CustomStorage">
           <Type>
@@ -608,7 +608,7 @@
       <Compartment Name="Properties" Title="Properties" />
       <Compartment Name="Events" Title="Events" />
     </CompartmentShape>
-    <CompartmentShape Id="ed123a13-de73-4a70-917a-e32103279f2b" Description="Description for FourDeep.PDizzle.AggregateRootShape" Name="AggregateRootShape" DisplayName="Aggregate Root Shape" Namespace="FourDeep.PDizzle" GeneratesDoubleDerived="true" FixedTooltipText="Aggregate Root Shape" ExposesTextColor="true" FillColor="BurlyWood" InitialHeight="1" ExposesFillColorAsProperty="true" ExposesFillGradientMode="true" Geometry="RoundedRectangle">
+    <CompartmentShape Id="ed123a13-de73-4a70-917a-e32103279f2b" Description="Description for FourDeep.PDizzle.AggregateRootShape" Name="AggregateRootShape" DisplayName="Aggregate Root Shape" Namespace="FourDeep.PDizzle" GeneratesDoubleDerived="true" FixedTooltipText="Aggregate Root Shape" ExposesTextColor="true" FillColor="Red" InitialHeight="1" ExposesFillColorAsProperty="true" ExposesFillGradientMode="true" Geometry="RoundedRectangle">
       <Properties>
         <DomainProperty Id="0fc801e4-7f48-4eff-8b73-b452f42e477b" Description="Description for FourDeep.PDizzle.AggregateRootShape.Fill Color" Name="FillColor" DisplayName="Fill Color" Kind="CustomStorage">
           <Type>

@@ -12,13 +12,29 @@ namespace FourDeep.PDizzle
     [System.Runtime.InteropServices.Guid("6CEB1406-CB25-445d-BD4B-6D52C72B3EB5")]
     public class CodeGenerator : TemplatedCodeGenerator
     {
+        private string LocateTemplate(DirectoryInfo dnfo, string fileName)
+        {
+            var files = dnfo.GetFiles("AggregateRootCoreTemplate.t4");
+            if (files.Count() > 0)
+            {
+                return files.First().FullName;
+            }
+            else
+            {
+                if(dnfo.Parent != null)
+                {
+                    return LocateTemplate(dnfo.Parent, fileName);
+                }
+                return null;
+            }
+
+        }
         protected override byte[] GenerateCode(string inputFileName, string inputFileContent) 
         {
             // Replace the supplied file contents with the template we want to run 
             FileInfo nfo = new FileInfo(inputFileName);
-            DirectoryInfo dnfo = nfo.Directory;
-            string coreTemplate = Path.Combine(dnfo.FullName, "AggregateRootCoreTemplate.t4");
-            if (File.Exists(coreTemplate))
+            string coreTemplate = LocateTemplate(nfo.Directory, "AggregateRootCoreTemplate.t4");
+            if (coreTemplate != null && File.Exists(coreTemplate))
             {
                 inputFileContent = File.ReadAllText(coreTemplate, ASCIIEncoding.UTF8);
             }

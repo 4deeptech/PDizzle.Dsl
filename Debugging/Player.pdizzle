@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <aggregateModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" dslVersion="1.0.0.0" Id="51fb937a-5286-456d-b61d-e47a633ead3e" xmlns="http://schemas.microsoft.com/dsltools/PDizzle">
   <aggregateRoot>
-    <aggregateRoot Id="eee4a2a6-e884-41cc-ad76-7032742ea6d1" name="Player" description="The player">
+    <aggregateRoot Id="eee4a2a6-e884-41cc-ad76-7032742ea6d1" name="Player" description="The player with a really long description to see if it wraps">
       <properties>
         <aggregateRootHasProperties Id="d683d8f5-5369-4492-9fe4-94c660c5eeca">
           <property Id="965468e7-2160-414a-8019-54a0dcb8ccbd" order="1" name="Id" type="PlayerId" description="The id" />
@@ -25,6 +25,9 @@
         <properties>
           <domainCommandHasProperties Id="30944b2f-385a-4008-99d0-734d8117f04c">
             <property Id="23da90a8-aa35-4146-ac66-833bb616e5e1" order="1" name="Id" type="PlayerId" description="The id" />
+          </domainCommandHasProperties>
+          <domainCommandHasProperties Id="471eb8c6-f351-4a05-a6b7-195274a27d18">
+            <property Id="e9fd45ae-4afb-466c-a734-ebbbc010a6cb" order="2" name="Name" type="String" />
           </domainCommandHasProperties>
         </properties>
       </domainCommand>

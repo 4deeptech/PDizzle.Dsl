@@ -23,7 +23,7 @@ using Cqrs.Model;
 namespace Cqrs.Model
 {
 	/// <summary>
-	/// The player
+	/// The player with a really long description to see if it wraps
 	/// </summary> 
 	public partial class Player : Aggregate,
 		IHandleCommand<CreatePlayer>
@@ -85,19 +85,26 @@ namespace Cqrs.Commands
 		[DataMember(Order = 1)] 
         public PlayerId Id { get; private set; }
 
+		/// <summary>
+		/// 
+		/// </summary>
+		[DataMember(Order = 2)] 
+        public String Name { get; private set; }
+
 		public CreatePlayer() 
         {
             
         }
 
-        public CreatePlayer(PlayerId id)
+        public CreatePlayer(PlayerId id, String name)
         {
             Id = id;
+			Name = name;
         }
 
         public override string ToString()
         {
-            return string.Format("Type: {0}, Id {1}",GetType().Name, Id);
+            return string.Format("Type: {0}, Id {1}, Name {2}",GetType().Name, Id, Name);
         }
     }//end CreatePlayer class
 

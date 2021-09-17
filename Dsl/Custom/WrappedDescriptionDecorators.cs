@@ -26,10 +26,10 @@ namespace FourDeep.PDizzle
             {
 
                 // This sets the wrapping behavior, but we need a couple of other things too:
-                descriptionField.DefaultMultipleLine = true;
+                descriptionField.DefaultMultipleLine = false;
 
                 // Autosize is incompatible with multiple line:
-                descriptionField.DefaultAutoSize = false;
+                descriptionField.DefaultAutoSize = true;
 
                 // Need to anchor the field sides to the parent box to get sensible size:
                 descriptionField.AnchoringBehavior.Clear();

@@ -2,23 +2,23 @@
 <pDizzleDiagram dslVersion="1.0.0.0" Id="d236958c-313f-4f26-8837-c50d379abc6f" absoluteBounds="0, 0, 13.125, 8.5" name="Player">
   <aggregateModelMoniker Id="51fb937a-5286-456d-b61d-e47a633ead3e" />
   <nestedChildShapes>
-    <aggregateRootShape Id="21e91ed2-5b26-430c-90f1-9770d3370491" absoluteBounds="5.875, 0.5, 1.5, 1.5516910807291668" fillColor="BurlyWood" textColor="Black" fillGradientMode="Horizontal">
+    <aggregateRootShape Id="21e91ed2-5b26-430c-90f1-9770d3370491" absoluteBounds="5.875, 0.5, 1.5, 1.5516910807291668" fillColor="Red" textColor="Black" fillGradientMode="Vertical">
       <aggregateRootMoniker name="/51fb937a-5286-456d-b61d-e47a633ead3e/Player" />
       <nestedChildShapes>
-        <elementListCompartment Id="75f9c6c6-eb7b-4796-b101-e68b1c04d5c0" absoluteBounds="5.89, 1.5099999999999998, 1.4700000000000002, 0.44169108072916663" name="Properties" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="75f9c6c6-eb7b-4796-b101-e68b1c04d5c0" absoluteBounds="5.89, 1.51, 1.4700000000000002, 0.44169108072916674" name="Properties" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </aggregateRootShape>
-    <viewShape Id="96c84b84-79a1-428b-8c19-c3ee6d9adf87" absoluteBounds="11.25, 1, 1.5, 1.69568359375" fillColor="Orange" textColor="Black" fillGradientMode="Horizontal">
+    <viewShape Id="96c84b84-79a1-428b-8c19-c3ee6d9adf87" absoluteBounds="11.25, 1, 1.5, 1.69568359375" fillColor="YellowGreen" textColor="Black" fillGradientMode="Horizontal">
       <viewMoniker Id="8221cfb8-428a-4789-bc2e-c3c3caa184ef" />
       <nestedChildShapes>
         <elementListCompartment Id="300416ba-5961-4d80-b240-42a5feae78f2" absoluteBounds="11.265, 1.51, 1.4700000000000002, 0.44169108072916663" name="Properties" titleTextColor="Black" itemTextColor="Black" />
         <elementListCompartment Id="24061336-565f-4e5c-a543-bf6e338988b1" absoluteBounds="11.265, 1.9616910807291665, 1.4700000000000002, 0.63399251302083326" name="Events" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </viewShape>
-    <domainCommandShape Id="43c8f336-0329-456a-87be-cac0e19af2e6" absoluteBounds="3.375, 2.5, 1.5, 1.0516910807291664" fillColor="DarkKhaki" textColor="Black" fillGradientMode="Horizontal">
+    <domainCommandShape Id="43c8f336-0329-456a-87be-cac0e19af2e6" absoluteBounds="3.375, 2.5, 1.5, 1.2439925130208329" fillColor="SkyBlue" textColor="Black" fillGradientMode="Horizontal">
       <domainCommandMoniker name="/51fb937a-5286-456d-b61d-e47a633ead3e/CreatePlayer" />
       <nestedChildShapes>
-        <elementListCompartment Id="e9380da7-1de3-416a-af01-6b1cc1314aca" absoluteBounds="3.39, 3.01, 1.4700000000000002, 0.44169108072916663" name="Properties" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="e9380da7-1de3-416a-af01-6b1cc1314aca" absoluteBounds="3.39, 3.01, 1.4700000000000002, 0.63399251302083326" name="Properties" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </domainCommandShape>
     <commandConnector Id="29505415-565c-4fd9-9629-a93f21bd221d" edgePoints="[(5.875 : 1.27584554036458); (4.125 : 1.27584554036458); (4.125 : 2.5)]" fixedFrom="NotFixed" fixedTo="NotFixed">
@@ -28,7 +28,7 @@
         <domainCommandShapeMoniker Id="43c8f336-0329-456a-87be-cac0e19af2e6" />
       </nodes>
     </commandConnector>
-    <domainEventShape Id="ef1eb101-ab8a-4f9e-abc0-a496e7cad909" absoluteBounds="8.25, 2.625, 1.5, 1.0516910807291664" fillColor="SteelBlue" textColor="Black" fillGradientMode="Horizontal">
+    <domainEventShape Id="ef1eb101-ab8a-4f9e-abc0-a496e7cad909" absoluteBounds="8.25, 2.625, 1.5, 1.0516910807291664" fillColor="Orange" textColor="Black" fillGradientMode="Horizontal">
       <domainEventMoniker Id="97bcf829-e961-4963-88da-19f8143d2510" />
       <nestedChildShapes>
         <elementListCompartment Id="70130bc4-c6f8-4e74-97f8-ed6a09d5f516" absoluteBounds="8.265, 3.135, 1.4700000000000002, 0.44169108072916663" name="Properties" titleTextColor="Black" itemTextColor="Black" />
